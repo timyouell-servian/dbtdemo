@@ -8,12 +8,14 @@ sources:
       - name: customers
         columns:
           - name: id
+            description: The primary key for raw customer data
             tests:
               - unique
               - not_null
       - name: orders
         columns:
           - name: id
+            description: The primary key for raw orders data
             tests:
               - unique
               - not_null
