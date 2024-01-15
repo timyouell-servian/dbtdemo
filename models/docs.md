@@ -12,3 +12,17 @@ Orders can be one of the following statuses:
 
 
 {% enddocs %}
+
+{% docs payment_method %}
+
+Orders can be one of the following statuses:
+
+| status         | description                                      |
+|----------------|--------------------------------------------------|
+| credit_card    | The payment was done by credit card              |
+| coupon         | The payment was done by cupom                    |
+| bank_transfer  | payment was done by bank transfer                |
+| gift_card      | payment was done by gift card                    |
+
+
+{% enddocs %}
