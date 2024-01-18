@@ -19,6 +19,10 @@ clean-targets:
 
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
+dispatch:
+  - macro_namespace: dbt
+    search_order: ['dbt_project_evaluator', 'dbt']
+
 models:
   jaffle_shop:
     +required_docs: true

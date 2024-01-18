@@ -2,17 +2,45 @@ version: 2
 
 models:
   - name: dim_customers
+    config:
+      contract:
+        enforced: true
     columns:
       - name: customer_id
+        data_type: int
+        constraints:
+          - type: not_null
         tests:
-            - unique
-            - not_null
+          - unique
+          - not_null
+      - name: first_name
+        data_type: string
+      - name: first_order_date
+        data_type: DATE
+      - name: last_name
+        data_type: TEXT
+      - name: lifetime_value
+        data_type: BIGINT
+      - name: most_recent_order_date
+        data_type: DATE
+      - name: number_of_orders
+        data_type: BIGINT
 
   - name: fct_orders
+    config:
+      contract:
+        enforced: true
     columns:
       - name: customer_id
+        data_type: int
         tests:
           - not_null
           - relationships:
               field: customer_id
               to: ref('dim_customers')
+      - name: amount
+        data_type: BIGINT
+      - name: order_date
+        data_type: DATE
+      - name: order_id
+        data_type: INTEGER
