@@ -2,11 +2,13 @@ version: 2
 
 models:
   - name: dim_customers
+    description: Customers dimension to descrribe events in fct_orders
     config:
       contract:
         enforced: true
     columns:
       - name: customer_id
+        description: Customer Id
         data_type: int
         constraints:
           - type: not_null
@@ -14,24 +16,32 @@ models:
           - unique
           - not_null
       - name: first_name
+        description: Customer First Name
         data_type: string
       - name: first_order_date
+        description: First Order Date
         data_type: DATE
       - name: last_name
+        description: Last Name
         data_type: TEXT
       - name: lifetime_value
+        description: Lifetime Value
         data_type: BIGINT
       - name: most_recent_order_date
+        description: Most recent order date
         data_type: DATE
       - name: number_of_orders
+        description: Total number of orders
         data_type: BIGINT
 
   - name: fct_orders
+    description: Fact table that contains orders rows
     config:
       contract:
         enforced: true
     columns:
       - name: customer_id
+        description: Customer Foreign Key
         data_type: int
         tests:
           - not_null
@@ -39,8 +49,11 @@ models:
               field: customer_id
               to: ref('dim_customers')
       - name: amount
+        description: Amount of value
         data_type: BIGINT
       - name: order_date
+        description: Order Date
         data_type: DATE
       - name: order_id
+        description: Order Id
         data_type: INTEGER

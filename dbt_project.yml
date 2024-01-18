@@ -25,10 +25,10 @@ dispatch:
 
 models:
   jaffle_shop:
-    +required_docs: true
     materialized: table
     staging:
       +materialized: view
     marts:
       +materialized: table
+      +required_docs: true
       +required_tests: {"unique.*|not_null|relationships.*": 2}
