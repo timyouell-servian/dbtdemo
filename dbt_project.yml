@@ -1,7 +1,9 @@
 name: "jaffle_shop"
+version: "0.1"
 
 config-version: 2
-version: "0.1"
+dbt-cloud:
+  project-id: 336480
 
 profile: "jaffle_shop"
 
