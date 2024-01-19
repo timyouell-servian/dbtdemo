@@ -6,6 +6,8 @@ models:
     config:
       contract:
         enforced: true
+    meta:
+      data_owner: Emerson Ferreira
     columns:
       - name: customer_id
         description: Customer Id
