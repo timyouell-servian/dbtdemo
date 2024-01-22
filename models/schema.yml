@@ -80,3 +80,16 @@ models:
         description: Amount of the order (AUD) paid for by gift card
         tests:
           - not_null
+
+exposures:
+  - name: table_report_sells
+    type: dashboard
+    label: Monthly Sells Report
+    url: https://www.cognizant.com/cogsellreport.aspx
+    description: Report that show the grouth sells for each month of the current year.
+    depends_on:
+      - "ref('customers')"
+      - "ref('orders')"
+    owner:
+      name: Emerson Ferreira
+      email: emerson.ferreira@cognizant.com
