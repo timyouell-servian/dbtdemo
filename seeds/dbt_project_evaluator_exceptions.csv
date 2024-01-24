@@ -1,0 +1,2 @@
+fct_name,column_name,id_to_exclude,comment
+fct_undocumented_models,resource_name,stg_orders, Do not consider this model
